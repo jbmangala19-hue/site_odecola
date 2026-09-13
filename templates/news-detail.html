@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section class="news-detail-header-section text-center">
+        <div class="section-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <h1 class="text-white">{{ article.titre }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-12">
+                    <div class="news-block">
+                        <div class="news-block-top">
+                            {% if article.image %}
+                                <img src="{{ article.image.url }}" class="news-image img-fluid" alt="{{ article.titre }}">
+                            {% else %}
+                                <img src="{% static 'images/news/medium-shot-volunteers-with-clothing-donations.jpg' %}" class="news-image img-fluid" alt="{{ article.titre }}">
+                            {% endif %}
+
+                            {% if article_category %}
+                            <div class="news-category-block">
+                                <a href="{% url 'blog' %}?categorie={{ article_category.id }}" class="category-block-link">{{ article_category.nom }}</a>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="news-block-info">
+                            <div class="d-flex mt-2">
+                                <div class="news-block-date">
+                                    <p><i class="bi-calendar4 custom-icon me-1"></i>{{ article.created_at|date:"d F Y" }}</p>
+                                </div>
+
+                                <div class="news-block-author mx-5">
+                                    <p><i class="bi-eye custom-icon me-1"></i>{{ article.nombre_lectures }}</p>
+                                </div>
+
+                                <div class="news-block-comment">
+                                    <p><i class="bi-chat custom-icon me-1"></i>{{ article.nombre_commentaires }} commentaire{{ article.nombre_commentaires|pluralize }}</p>
+                                </div>
+                            </div>
+
+                            <div class="news-block-title mb-2">
+                                <h4>{{ article.titre }}</h4>
+                            </div>
+
+                            <div class="news-block-body">
+                                {{ article.contenu|linebreaksbr }}
+                            </div>
+
+                            <div class="social-share border-top mt-5 py-4 d-flex flex-wrap align-items-center">
+                                <div class="tags-block me-auto">
+                                    {% if article_category %}
+                                        <a href="{% url 'blog' %}?categorie={{ article_category.id }}" class="tags-block-link">{{ article_category.nom }}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            {% if comments %}
+                                <div class="mt-5">
+                                    <h5 class="mb-3">Commentaires</h5>
+                                    {% for comment in comments %}
+                                        <div class="author-comment d-flex mt-3 mb-4">
+                                            {% if comment.auteur.image %}
+                                            <img src="{{ comment.auteur.image.url }}" class="img-fluid avatar-image" alt="{{ comment.auteur.user.username }}">
+                                            {% else %}
+                                            <img src="{% static 'images/user.png' %}" class="img-fluid avatar-image" alt="{{ comment.auteur.user.username }}">
+                                            {% endif %}
+                                            <div class="author-comment-info ms-3">
+                                                <h6 class="mb-1">{{ comment.auteur.user.get_full_name|default:comment.auteur.user.username }}</h6>
+                                                <p class="mb-0">{{ comment.contenu }}</p>
+                                                <small class="text-muted">{{ comment.created_at|date:"d F Y à H:i" }}</small>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <form class="custom-form comment-form mt-4" action="" method="post" role="form">
+                                {% csrf_token %}
+                                <h6 class="mb-3">Laisser un commentaire</h6>
+                                <textarea name="contenu" rows="4" class="form-control" id="comment-message" placeholder="Votre commentaire ici" required></textarea>
+                                <div class="col-lg-3 col-md-4 col-6 ms-auto">
+                                    <button type="submit" class="form-control">Commenter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mx-auto mt-4 mt-lg-0">
+                    <form class="custom-form search-form" action="{% url 'blog' %}" method="get" role="form">
+                        <input name="q" class="form-control" type="search" placeholder="Rechercher..." aria-label="Recherche">
+                        <button type="submit" class="form-control"><i class="bi-search"></i></button>
+                    </form>
+
+                    <h5 class="mt-5 mb-3">Actualités récentes</h5>
+                    {% for recent in recent_articles %}
+                        <div class="news-block news-block-two-col d-flex mt-4">
+                            <div class="news-block-two-col-image-wrap">
+                                <a href="{% url 'detail_article' recent.slug %}">
+                                    {% if recent.image %}
+                                        <img src="{{ recent.image.url }}" class="news-image img-fluid" alt="{{ recent.titre }}">
+                                    {% else %}
+                                        <img src="{% static 'images/news/africa-humanitarian-aid-doctor.jpg' %}" class="news-image img-fluid" alt="{{ recent.titre }}">
+                                    {% endif %}
+                                </a>
+                            </div>
+
+                            <div class="news-block-two-col-info">
+                                <div class="news-block-title mb-2">
+                                    <h6><a href="{% url 'detail_article' recent.slug %}" class="news-block-title-link">{{ recent.titre }}</a></h6>
+                                </div>
+                                <div class="news-block-date">
+                                    <p><i class="bi-calendar4 custom-icon me-1"></i>{{ recent.created_at|date:"d F Y" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>Aucune actualité récente.</p>
+                    {% endfor %}
+
+                    <div class="category-block d-flex flex-column">
+                        <h5 class="mb-3">Catégories</h5>
+                        {% for category in categories %}
+                            <a href="{% url 'blog' %}?categorie={{ category.id }}" class="category-block-link">
+                                {{ category.nom }}
+                            </a>
+                        {% empty %}
+                            <span>Aucune catégorie.</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if related_articles %}
+    <section class="news-section section-padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12 mb-4">
+                    <h2>Actualités liées</h2>
+                </div>
+
+                {% for related in related_articles %}
+                <div class="col-lg-6 col-12">
+                    <div class="news-block">
+                        <div class="news-block-top">
+                            <a href="{% url 'detail_article' related.slug %}">
+                                {% if related.image %}
+                                    <img src="{{ related.image.url }}" class="news-image img-fluid" alt="{{ related.titre }}">
+                                {% else %}
+                                    <img src="{% static 'images/news/medium-shot-volunteers-with-clothing-donations.jpg' %}" class="news-image img-fluid" alt="{{ related.titre }}">
+                                {% endif %}
+                            </a>
+                                {% with related_category=related.categorie_articles.first.categorie %}
+                                {% if related_category %}
+                                <div class="news-category-block">
+                                    <a href="{% url 'blog' %}?categorie={{ related_category.id }}" class="category-block-link">{{ related_category.nom }}</a>
+                                </div>
+                                {% endif %}
+                                {% endwith %}
+                            </div>
+                                </div>
+                            </div>
+
+                            <div class="news-block-title mb-2">
+                                <h4><a href="{% url 'detail_article' related.slug %}" class="news-block-title-link">{{ related.titre }}</a></h4>
+                            </div>
+
+                            <div class="news-block-body">
+                                <p>{{ related.contenu|truncatewords:20 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+</main>
+{% endblock %}

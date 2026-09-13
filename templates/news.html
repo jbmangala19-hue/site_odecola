@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% block actu %}
+        <main id="section_5">
+
+            <section class="news-detail-header-section text-center">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h1 class="text-white">Actualités</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="news-section section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-7 col-12">
+                        
+                        {% for article in articles %}
+                            <div class="news-block">
+                                <div class="news-block-top">
+                                    <a href="{% url 'detail_article' article.slug %}">
+                                    {% if article.image %}
+                                        <img src="{{ article.image.url }}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                    {% else %}
+                                        <img src="{% static 'images/news/medium-shot-volunteers-with-clothing-donations.jpg' %}" class="news-image img-fluid" alt="">
+                                    {% endif %}
+                                    </a>
+
+                                    <div class="news-category-block">
+                                        {% for categorie_article in article.categorie_articles.all|slice:':5' %}
+                                        <a href="{% url 'blog' %}?categorie={{ categorie_article.categorie.id }}" class="category-block-link">
+                                            {{ categorie_article.categorie.nom }}
+                                        </a>
+                                        {% if not forloop.last %}<span>, </span>{% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="news-block-info">
+                                    <div class="d-flex mt-2">
+                                        <div class="news-block-date">
+                                            <p>
+                                                <i class="bi-calendar4 custom-icon me-1"></i>
+                                                {{ article.created_at|date:"d F Y" }}
+                                            </p>
+                                        </div>
+
+                                        <div class="news-block-author mx-5">
+                                            <p>
+                                                <i class="bi-eye custom-icon me-1"></i>
+                                                {{ article.lectures.count }} lectures
+                                            </p>
+                                        </div>
+
+                                        <div class="news-block-comment">
+                                            <p>
+                                                <i class="bi-chat-left custom-icon me-1"></i>
+                                                {{ article.commentaires.count }} commentaires
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-block-title mb-2">
+                                        <h4><a href="{% url 'detail_article' article.slug %}" class="news-block-title-link">{{ article.titre }}</a></h4>
+                                    </div>
+
+                                    <div class="news-block-body">
+                                        <p>{{ article.contenu|striptags|truncatechars:250 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>Aucun article publié pour le moment.</p>
+                        {% endfor %}
+                            
+                            <div class="mt-5" style="text-align:center">
+                                {% if page_obj.has_previous %}
+                                    <a href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.previous_page_number }}" class="nav-link custom-btn custom-border-btn btn" aria-label="Page précédente">
+                                        Précédent
+                                    </a>
+                                {% endif %}
+                                {% for page_number in page_obj.paginator.page_range %}
+                                    <a href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_number }}" class="{% if page_number == page_obj.number %}custom-btn btn smoothscroll{% else %}nav-link custom-btn custom-border-btn btn{% endif %}">{{ page_number }}</a>
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <a href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.next_page_number }}" class="nav-link custom-btn custom-border-btn btn" aria-label="Page suivante">
+                                        Suivant
+                                    </a>
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+    {% endblock %}
+
+                        <div class="col-lg-4 col-12 mx-auto mt-4 mt-lg-0">
+                            <form class="custom-form search-form" method="get" action="{% url 'blog' %}" role="form">
+                                <input class="form-control" type="search" placeholder="Recherche" aria-label="Recherche" name="q" value="{{ query }}">
+
+                                <button type="submit" class="form-control">
+                                    <i class="bi-search"></i>
+                                </button>
+                            </form>
+
+                            <h5 class="mt-5 mb-3">Articles récents</h5>
+
+                            {% for article in recent_articles %}
+                            <div class="news-block news-block-two-col d-flex mt-4">
+                                <div class="news-block-two-col-image-wrap">
+                                    <a href="{% url 'detail_article' article.slug %}">
+                                    {% if article.image %}
+                                        <img src="{{ article.image.url }}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                    {% else %}
+                                        <img src="{% static 'images/news/africa-humanitarian-aid-doctor.jpg' %}" class="news-image img-fluid" alt="">
+                                    {% endif %}
+                                    </a>
+                                </div>
+
+                                <div class="news-block-two-col-info">
+                                    <div class="news-block-title mb-2">
+                                        <h6><a href="{% url 'detail_article' article.slug %}" class="news-block-title-link">{{ article.titre }}</a></h6>
+                                    </div>
+
+                                    <div class="news-block-date">
+                                        <p>
+                                            <i class="bi-calendar4 custom-icon me-1"></i>
+                                            {{ article.created_at|date:"d F Y" }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p>Aucun article récent.</p>
+                            {% endfor %}
+
+                            <div class="tags-block mt-5">
+                                <h5 class="mb-3">Catégories</h5>
+
+                            {% for categorie in categories %}
+                                <a href="{% url 'blog' %}?categorie={{ categorie.id }}" class="tags-block-link{% if category_id == categorie.id|stringformat:'s' %} active{% endif %}">
+                                    {{ categorie.nom }}
+                                </a>
+                            {% empty %}
+                                <p>Aucune catégorie associée.</p>
+                            {% endfor %}
+                            </div>
+                            {% if category_id or query %}
+                            <div class="custom-form subscribe-form">
+                                <div class="col-lg-12 col-12">
+                                    <a href="/actualites" class="nav-link custom-btn custom-border-btn btn">Effacer les filtres</a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+{% endblock %}

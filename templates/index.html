@@ -1,0 +1,748 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <main>
+
+            <section class="hero-section hero-section-full-height" id="accueil">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 p-0">
+                            <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/slide/volunteer-helping-with-donation-box.jpg' %}" class="carousel-image img-fluid" alt="ODECOLA/N Kananga">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end">
+                                            <h1>ODECOLA / N</h1>
+                                            
+                                            <p>Défense des droits de communautés locales</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg' %}" class="carousel-image img-fluid" alt="Kasaï Central">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end">
+                                            <h1>Kasaï Central</h1>
+                                            
+                                            <p>Siège administratif basé à Kananga</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/slide/medium-shot-people-collecting-donations.jpg' %}" class="carousel-image img-fluid" alt="Développement durable">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end">
+                                            <h1>Droits&amp;progrès</h1>
+                                            
+                                            <p>Agir pour la justice sociale</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Précédent</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Suivant</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 text-center mx-auto">
+                            <h2 class="mb-5">Bienvenue à l'ONG ODECOLA/N</h2>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#section_3" class="d-block">
+                                    <img src="{% static 'images/icons/hands.png' %}" class="featured-block-image img-fluid" alt="Droits de l'Homme">
+
+                                    <p class="featured-block-text">Protection des <strong>Droits Humains</strong></p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#section_3" class="d-block">
+                                    <img src="{% static 'images/icons/heart.png' %}" class="featured-block-image img-fluid" alt="Agriculture & Élevage">
+
+                                    <p class="featured-block-text"><strong>Agriculture &amp;</strong> Élevage</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#section_3" class="d-block">
+                                    <img src="{% static 'images/icons/receive.png' %}" class="featured-block-image img-fluid" alt="Environnement">
+
+                                    <p class="featured-block-text">Protection de l'<strong>Environnement</strong></p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#section_3" class="d-block">
+                                    <img src="{% static 'images/icons/scholarship.png' %}" class="featured-block-image img-fluid" alt="Infrastructures de base">
+
+                                    <p class="featured-block-text"><strong>Infrastructures</strong> de base</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding section-bg" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <img src="{% static 'images/group-people-volunteering-foodbank-poor-people.jpg' %}" class="custom-text-box-image img-fluid" alt="Équipe ODECOLA/N sur le terrain">
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="custom-text-box">
+                                <h2 class="mb-2">Qui sommes-nous ?</h2>
+
+                                <h5 class="mb-3">ODECOLA/N — ONG au service des communautés et des peuples autochtones</h5>
+
+                                <p class="mb-0">L'<strong>Organisation pour la défense des droits de communautés locales et peuples autochtones/nationales (ODECOLA/N)</strong> est une structure non gouvernementale engagée dont le siège administratif est basé à <strong>Kananga</strong>, dans la province du <strong>Kasaï Central</strong> en République Démocratique du Congo. Nous agissons au plus près des populations pour garantir le respect de leurs droits fondamentaux, promouvoir leur sécurité alimentaire et favoriser un développement harmonieux et durable.</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="custom-text-box mb-lg-0">
+                                        <h5 class="mb-3">Notre Mission</h5>
+
+                                        <p>Défendre les droits des plus vulnérables, valoriser le travail paysan et préserver le patrimoine environnemental du Kasaï Central.</p>
+
+                                        <ul class="custom-list mt-2">
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                Plaidoyer &amp; Droits Humains
+                                            </li>
+
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                Souveraineté Alimentaire
+                                            </li>
+
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                Gestion Durable des Ressources
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                                        <div class="counter-thumb"> 
+                                            <div class="d-flex">
+                                                <span class="counter-number" data-from="1" data-to="7" data-speed="1000"></span>
+                                                <span class="counter-number-text"></span>
+                                            </div>
+
+                                            <span class="counter-text">Domaines d'intervention</span>
+                                        </div> 
+
+                                        <div class="counter-thumb mt-4"> 
+                                            <div class="d-flex">
+                                                <span class="counter-number" data-from="1" data-to="100" data-speed="1000"></span>
+                                                <span class="counter-number-text">%</span>
+                                            </div>
+
+                                            <span class="counter-text">Engagement Local</span>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about-section section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-5 col-12">
+                            <img src="{% static 'images/portrait-volunteer-who-organized-donations-charity.jpg' %}" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="Coordination ODECOLA/N">
+                        </div>
+
+                        <div class="col-lg-5 col-md-7 col-12">
+                            <div class="custom-text-block">
+                                <h2 class="mb-0">Coordination Générale</h2>
+
+                                <p class="text-muted mb-lg-4 mb-md-4">Siège Administratif de Kananga</p>
+
+                                <p>Établie au quartier Plateau à Kananga, l'équipe de l'ODECOLA/N est constituée d'acteurs de terrain, d'experts du développement rural et de défenseurs des droits humains dévoués à la cause des populations locales et des peuples autochtones.</p>
+
+                                <p>Nous collaborons étroitement avec les communautés de base, les autorités provinciales et les partenaires techniques et financiers pour bâtir des solutions adaptées aux réalités du Kasaï Central.</p>
+
+                                <ul class="social-icon mt-4">
+                                    <li class="social-icon-item">
+                                        <a href="mailto:Odecola130@gmail.com" class="social-icon-link bi-envelope" title="Nous écrire"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="tel:+243973340580" class="social-icon-link bi-telephone" title="Appeler le siège"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="https://wa.me/243973340580" target="_blank" class="social-icon-link bi-whatsapp" title="WhatsApp"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section section-padding section-bg">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-6 col-12 ms-auto">
+                            <h2 class="mb-0">Ensemble pour la dignité des communautés locales et des peuples autochtones.</h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <a href="/#contact" class="custom-btn btn smoothscroll">Rejoindre l'ODECOLA/N</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center mb-5">
+                            <h2>Nos Domaines d'Intervention</h2>
+                            <p class="text-muted">Les 7 axes stratégiques de l'ONG ODECOLA/N pour un impact durable au Kasaï Central</p>
+                        </div>
+
+                        <!-- 1. Protection des droits de l'Homme/droits humains -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/causes/group-african-kids-paying-attention-class.jpg' %}" class="custom-block-image img-fluid" alt="Protection des droits de l'Homme">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">1. Droits de l'Homme &amp; Droits Humains</h5>
+
+                                        <p>Défense des droits des communautés locales et des peuples autochtones, protection contre les discriminations, assistance juridique et plaidoyer pour l'accès équitable à la terre et à la justice.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Plaidoyer &amp; Justice
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Zone :</strong>
+                                                Kasaï Central
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Agriculture -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/different-people-doing-volunteer-work.jpg' %}" class="custom-block-image img-fluid" alt="Agriculture durable">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">2. Agriculture</h5>
+
+                                        <p>Appui aux agriculteurs locaux, distribution de semences améliorées, vulgarisation des techniques agro-écologiques durables et renforcement de la sécurité alimentaire communautaire.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Sécurité alimentaire
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Bénéficiaires :</strong>
+                                                Producteurs locaux
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Élevage & Pisciculture -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/news/close-up-happy-people-working-together.jpg' %}" class="custom-block-image img-fluid" alt="Élevage et Pisciculture">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">3. Élevage &amp; Pisciculture</h5>
+
+                                        <p>Aménagement d'étangs piscicoles, promotion du petit élevage et de l'élevage pastoral pour améliorer les apports protéiques des ménages et diversifier les sources de revenus familiaux.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Nutrition &amp; Revenus
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Filière :</strong>
+                                                Poissons &amp; Bétail
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Transformation agroalimentaire -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/news/medium-shot-people-collecting-foodstuff.jpg' %}" class="custom-block-image img-fluid" alt="Transformation agroalimentaire">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">4. Transformation Agroalimentaire</h5>
+
+                                        <p>Valorisation locale des récoltes vivrières (manioc, maïs, fruits, tubercules), amélioration des méthodes de conservation et réduction des pertes post-récolte pour accroître la valeur ajoutée.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Valeur ajoutée
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Impact :</strong>
+                                                Autonomie économique
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Commercialisation des produits -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg' %}" class="custom-block-image img-fluid" alt="Commercialisation des produits">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">5. Commercialisation des Produits</h5>
+
+                                        <p>Organisation des coopératives paysannes, facilitation de l'accès aux marchés locaux et urbains de Kananga, et garantie d'une rémunération juste et équitable pour les producteurs.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Commerce équitable
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Accès :</strong>
+                                                Marchés de Kananga
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Environnement -->
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/causes/poor-child-landfill-looks-forward-with-hope.jpg' %}" class="custom-block-image img-fluid" alt="Protection de l'environnement">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">6. Environnement</h5>
+
+                                        <p>Préservation des forêts et de la biodiversité, lutte contre la déforestation et les érosions du Kasaï Central, reboisement communautaire et sensibilisation au changement climatique.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Reboisement &amp; Écologie
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Objectif :</strong>
+                                                Climat résilient
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Infrastructures de base -->
+                        <div class="col-lg-4 col-md-6 col-12 mx-auto mb-4">
+                            <div class="custom-block-wrap">
+                                <img src="{% static 'images/causes/african-woman-pouring-water-recipient-outdoors.jpg' %}" class="custom-block-image img-fluid" alt="Infrastructures de base">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">7. Infrastructures de Base</h5>
+
+                                        <p>Amélioration des voies de desserte agricole pour désenclaver les territoires, accès à l'eau potable, réhabilitation d'écoles communautaires et de structures sanitaires de proximité.</p>
+
+                                        <div class="progress mt-4">
+                                            <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Priorité :</strong>
+                                                Eau, Écoles &amp; Routes
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Impact :</strong>
+                                                Désenclavement
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="#section_5" class="custom-btn btn">Soutenir cette action</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="news-section section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 mb-5">
+                            <h2>Dernières Actualités &amp; Actions</h2>
+                        </div>
+
+                        <div class="col-lg-7 col-12">
+                            {% for article in featured_articles %}
+                                <div class="news-block{% if not forloop.first %} mt-3{% endif %}">
+                                    <div class="news-block-top">
+                                        <a href="{% url 'detail_article' article.slug %}">
+                                            {% if article.image %}
+                                                <img src="{{ article.image.url }}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                            {% else %}
+                                                <img src="{% static 'images/news/medium-shot-volunteers-with-clothing-donations.jpg' %}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                            {% endif %}
+                                        </a>
+
+                                        <div class="news-category-block">
+                                            {% for categorie_article in article.categorie_articles.all|slice:':5' %}
+                                            <a href="{% url 'blog' %}?categorie={{ categorie_article.categorie.id }}" class="category-block-link">
+                                                {{ categorie_article.categorie.nom }}
+                                            </a>
+                                            {% if not forloop.last %}<span>, </span>{% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <div class="news-block-info">
+                                        <div class="d-flex mt-2">
+                                            <div class="news-block-date">
+                                                <p><i class="bi-calendar4 custom-icon me-1"></i>{{ article.created_at|date:"d F Y" }}</p>
+                                            </div>
+
+                                            <div class="news-block-author mx-5">
+                                                <p><i class="bi-eye custom-icon me-1"></i>{{ article.nombre_lectures }}</p>
+                                            </div>
+
+                                            <div class="news-block-comment">
+                                                <p><i class="bi-chat custom-icon me-1"></i>{{ article.nombre_commentaires }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="news-block-title mb-2">
+                                            <h4><a href="{% url 'detail_article' article.slug %}" class="news-block-title-link">{{ article.titre }}</a></h4>
+                                        </div>
+
+                                        <div class="news-block-body">
+                                            <p>{{ article.contenu|truncatewords:35 }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <p>Aucune actualité publiée pour le moment.</p>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-lg-4 col-12 mx-auto">
+                            <form class="custom-form search-form" action="{% url 'blog' %}" method="get" role="form">
+                                <input name="q" type="search" class="form-control" id="search" placeholder="Rechercher..." aria-label="Recherche">
+
+                                <button type="submit" class="form-control">
+                                    <i class="bi-search"></i>
+                                </button>
+                            </form>
+
+                            <h5 class="mt-5 mb-3">Activités Récentes</h5>
+
+                            {% for article in recent_articles %}
+                                <div class="news-block news-block-two-col d-flex mt-4">
+                                    <div class="news-block-two-col-image-wrap">
+                                        <a href="{% url 'blog' %}">
+                                            {% if article.image %}
+                                                <img src="{{ article.image.url }}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                            {% else %}
+                                                <img src="{% static 'images/news/africa-humanitarian-aid-doctor.jpg' %}" class="news-image img-fluid" alt="{{ article.titre }}">
+                                            {% endif %}
+                                        </a>
+                                    </div>
+
+                                    <div class="news-block-two-col-info">
+                                        <div class="news-block-title mb-2">
+                                            <h6><a href="{% url 'blog' %}" class="news-block-title-link">{{ article.titre }}</a></h6>
+                                        </div>
+
+                                        <div class="news-block-date">
+                                            <p><i class="bi-calendar4 custom-icon me-1"></i>{{ article.created_at|date:"d F Y" }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <p>Aucune activité récente.</p>
+                            {% endfor %}
+
+                            <div class="tags-block">
+                                <h5 class="mb-3">Catégories</h5>
+
+                                {% for category in categories %}
+                                    <a href="{% url 'blog' %}?categorie={{ category.id }}" class="tags-block-link">{{ category.nom }}</a>
+                                {% empty %}
+                                    <span>Aucune catégorie.</span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="custom-form subscribe-form">
+                                <div class="col-lg-12 col-12">
+                                    <a href="/actualites" class="nav-link custom-btn custom-border-btn btn">Voir toute l'actualité</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="testimonial-section section-padding section-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <h2 class="mb-lg-3">Témoignages &amp; Échos du Terrain</h2>
+
+                            {% if temoignages %}
+                                <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {% for temoignage in temoignages %}
+                                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                <div class="carousel-caption">
+                                                    <h4 class="carousel-title">{{ temoignage.contenu }}</h4>
+                                                    <small class="carousel-name">
+                                                        <span class="carousel-name-title">{{ temoignage.acteur.designation }}</span>,
+                                                        {% if temoignage.acteur.fonction %}{{ temoignage.acteur.fonction }}{% else %}Partenaire{% endif %}
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <ol class="carousel-indicators mt-5">
+                                        {% for temoignage in temoignages %}
+                                            <li data-bs-target="#testimonial-carousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}">
+                                                {% if temoignage.acteur.image %}
+                                                    <img src="{{ temoignage.acteur.image.url }}" class="img-fluid rounded-circle avatar-image" alt="{{ temoignage.acteur.designation }}">
+                                                {% else %}
+                                                    <img src="{% static 'images/user.png' %}" class="img-fluid rounded-circle avatar-image" alt="{{ temoignage.acteur.designation }}">
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ol>
+                                </div>
+                            {% else %}
+                                <p class="text-muted text-center mb-0">Aucun témoignage disponible pour le moment.</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-section section-padding" id="section_5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-5 col-12 ms-auto mb-5 mb-lg-0">
+                            <div class="contact-info-wrap">
+                                <h2>Contactez-nous</h2>
+
+                                <div class="contact-image-wrap d-flex flex-wrap">
+                                    <img src="{% static 'images/logo.jpg' %}" class="img-fluid avatar-image" alt="Siège ODECOLA/N">
+
+                                    <div class="d-flex flex-column justify-content-center ms-3">
+                                        <p class="mb-0"><strong>ODECOLA / N</strong></p>
+                                        <p class="mb-0 text-muted">Siège Administratif de Kananga</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info">
+                                    <h5 class="mb-3">Nos Coordonnées</h5>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-geo-alt me-2"></i>
+                                        <span>
+                                            <strong>Adresse :</strong><br>
+                                            Avenue de l'Aéroport, Numéro 15918,<br>
+                                            Quartier Plateau, Commune et Ville de Kananga,<br>
+                                            Province du Kasaï Central, RDC.
+                                        </span>
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-telephone me-2"></i>
+                                        <span>
+                                            <strong>Téléphones :</strong><br>
+                                            <a href="tel:+243973340580">+243 973 340 580</a> / 
+                                            <a href="tel:+243828265494">+243 828 265 494</a>
+                                        </span>
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-whatsapp me-2"></i>
+                                        <span>
+                                            <strong>WhatsApp :</strong><br>
+                                            <a href="https://wa.me/243973340580" target="_blank">+243 973 340 580</a>
+                                        </span>
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-envelope me-2"></i>
+                                        <span>
+                                            <strong>Email :</strong><br>
+                                            <a href="mailto:Odecola130@gmail.com">Odecola130@gmail.com</a>
+                                        </span>
+                                    </p>
+
+                                    <a href="mailto:Odecola130@gmail.com" class="custom-btn btn mt-3">Nous écrire directement</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <form class="custom-form contact-form" method="post" role="form">
+                                {% csrf_token %}
+                                <h2>Formulaire de contact</h2>
+
+                                <p class="mb-4">Une question ou une proposition de partenariat ? Écrivez-nous ou contactez-nous directement à :
+                                    <a href="mailto:Odecola130@gmail.com">Odecola130@gmail.com</a>
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="nom" class="form-control" placeholder="Nom complet" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="email" name="email" class="form-control" placeholder="Adresse e-mail" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="tel" class="form-control" placeholder="Téléphone (optionnel)">
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="sujet" class="form-control" placeholder="Sujet" required>
+                                    </div>
+                                </div>
+
+                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="Comment pouvons-nous vous aider ? Écrivez votre message..." required></textarea>
+
+                                {% if message %}
+                                <p class="text-success">{{message}}</p>
+                                {% endif %}
+                                
+                                <button type="submit" class="form-control">Envoyer le message</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+{% endblock %}

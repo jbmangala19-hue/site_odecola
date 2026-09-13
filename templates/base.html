@@ -1,0 +1,226 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="ODECOLA/N - Organisation pour la défense des droits de communautés locales et peuples autochtones/nationales. Siège administratif à Kananga, province du Kasaï Central.">
+        <meta name="author" content="ODECOLA/N">
+
+        <title>ODECOLA/N - Organisation pour la Défense des Droits de Communautés Locales et Peuples Autochtones</title>
+
+        <!-- CSS FILES -->        
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/templatemo-kind-heart-charity.css' %}" rel="stylesheet">
+    </head>
+    
+    <body id="section_1">
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+                            Avenue de l'Aéroport, N° 15918, Quartier Plateau, Kananga, Kasaï Central
+                        </p>
+
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+                            <a href="mailto:Odecola130@gmail.com">
+                                Odecola130@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="tel:+243973340580" class="social-icon-link bi-telephone" title="+243 973340580"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://wa.me/243973340580" target="_blank" class="social-icon-link bi-whatsapp" title="WhatsApp +243 973340580"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-facebook" title="Facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-twitter" title="Twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-youtube" title="YouTube"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'images/logo.jpg' %}" class="logo img-fluid" alt="Logo ODECOLA/N">
+                    <span>
+                        ODECOLA / N
+                        <small>Défense des Droits &amp; Développement</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#accueil">Accueil</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#section_2">Apropos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_3">Domaines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#section_4">Actualités</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#section_5">Contact</a>
+                        </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn btn" href="{% url 'deconnexion' %}">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn btn" href="/connexion">Connexion</a>
+                        </li>
+                    {% endif %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-4">
+                        <img src="{% static 'images/logo.jpg' %}" class="logo img-fluid mb-3" alt="Logo ODECOLA/N">
+                        <h5 class="text-white mb-2">ODECOLA / N</h5>
+                        <p class="text-white small">
+                            Organisation pour la défense des droits de communautés locales et peuples autochtones/nationales.<br>
+                            Structure basée à Kananga, active pour le respect des droits et le développement durable au Kasaï Central.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5 class="site-footer-title mb-3">Nos 7 Domaines d'Action</h5>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Droits Humains</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Agriculture</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Élevage &amp; Pisciculture</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Transformation</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Commercialisation</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Environnement</a></li>
+                            <li class="footer-menu-item"><a href="/#section_3" class="footer-menu-link">Infrastructures</a></li>
+                            <li class="footer-menu-item"><a href="/#section_5" class="footer-menu-link">Nous rejoindre</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mx-auto">
+                        <h5 class="site-footer-title mb-3">Siège Administratif</h5>
+
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone me-2"></i>
+                            <span>
+                                <a href="tel:+243973340580" class="site-footer-link">+243 973 340 580</a><br>
+                                <a href="tel:+243828265494" class="site-footer-link">+243 828 265 494</a>
+                            </span>
+                        </p>
+
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-envelope me-2"></i>
+                            <a href="mailto:Odecola130@gmail.com" class="site-footer-link">
+                                Odecola130@gmail.com
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex mt-3">
+                            <i class="bi-geo-alt me-2"></i>
+                            <span>
+                                Avenue de l'Aéroport, N° 15918,<br>
+                                Quartier Plateau, Kananga,<br>
+                                Province du Kasaï Central, RDC
+                            </span>
+                        </p>
+
+                        <a href="mailto:Odecola130@gmail.com" class="custom-btn btn mt-3">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-7 col-md-7 col-12">
+                            <p class="copyright-text mb-0">
+                                Copyright © 2026 <strong>ODECOLA/N</strong> — Design & développement par <a href="https://www.vinx.app" target="_blank">VINX</a>.
+                            </p>
+                        </div>
+                        
+                        <div class="col-lg-5 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                            <ul class="social-icon">
+                                <li class="social-icon-item">
+                                    <a href="https://wa.me/243973340580" target="_blank" class="social-icon-link bi-whatsapp" title="WhatsApp"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="mailto:Odecola130@gmail.com" class="social-icon-link bi-envelope" title="Email"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook" title="Facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter" title="Twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-youtube" title="YouTube"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/click-scroll.js' %}"></script>
+        <script src="{% static 'js/counter.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
+</html>

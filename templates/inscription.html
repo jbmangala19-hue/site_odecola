@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="m-5">
+  <div class="row g-0">
+    <div class="col-lg-6 card px-5">
+        <a href="/" class="nav-logo d-block mb-4">
+            <img src="{% static 'images/logo.jpg' %}" height="120" width="150" alt="logo">
+        </a>
+        <div class="text-center mb-4">
+            <div class="section-tag">Inscription</div>
+            <h2 class="section-title">Créez votre compte</h2>
+        </div>
+        <form class="mb-3" method="post" action="{% url 'inscription' %}">
+            {% csrf_token %}
+            <div class="row g-2 mb-4">
+                <div class="col-lg-6 mb-2">
+                  <label class="section-sub">Nom complet</label>
+                  <input class="form-control" type="text" name="nom" placeholder="Entrez votre nom complet" required>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <label class="section-sub">Téléphone (facultatif)</label>
+                  <input class="form-control" type="text" name="tel" placeholder="Entrez votre numéro">
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <label class="section-sub">Adresse e-mail</label>
+                  <input class="form-control" type="email" name="email" placeholder="exemple@gmail.com" required>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <label class="section-sub">Mot de passe</label>
+                  <input class="form-control" type="password" name="password" placeholder="Entrez votre mot de passe" required>
+                </div>
+            </div>
+            {% if error %}
+                <p class="sec-badge-desc text-danger mt-3" role="alert">{{ error }}</p>
+            {% endif %}
+            <div class="d-flex gap-1 mt-5">
+                <button type="submit" class="custom-btn btn smoothscroll">
+                    Valider
+                </button>
+                <a href="/" class="nav-link custom-btn custom-border-btn btn">Accueil</a>
+            </div>
+        </form>
+
+        <a href="/connexion" class="mt-5 mb-5 d-block text-center sec-badge-desc">Vous avez déjà un compte ? Connectez-vous</a>
+    </div>
+    <div class="col-lg-6">
+      <img src="{% static 'images/causes/african-woman-pouring-water-recipient-outdoors.jpg' %}" loading="lazy" class="h-100 w-100" alt="histoire">
+    </div>
+  </div>
+</main>
+
+{% endblock %}
